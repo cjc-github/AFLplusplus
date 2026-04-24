@@ -4,11 +4,12 @@
 案例：
 
 ```bash
-git clone https://github.com/fuzzstati0n/fuzzgoat.git
+# git clone https://github.com/fuzzstati0n/fuzzgoat.git
 cd fuzzgoat
 gcc -o fuzzgoat -I. main.c fuzzgoat.c -lm
 
-./afl-fuzz -i ./fuzzgoat/in/ -o ./fuzzgoat/out -n -- ./fuzzgoat/fuzzgoat @@
+cd ../AFLplusplus/
+./afl-fuzz -i ../fuzzgoat/in/ -o ../fuzzgoat/out -n -- ../fuzzgoat/fuzzgoat @@
 ```
 
 ## 问题1：echo core >/proc/sys/kernel/core_pattern出现
