@@ -4,11 +4,11 @@
 案例：
 
 ```bash
-cd ./AFLpp-Android-Greybox/fuzzers/aflpp/AFLplusplus-4.20c/
 git clone https://github.com/fuzzstati0n/fuzzgoat.git
 cd fuzzgoat
 gcc -o fuzzgoat -I. main.c fuzzgoat.c -lm
-./afl-fuzz -i ./fuzzgoat/in/ -o ./fuzzgoat/out -- ./fuzzgoat/fuzzgoat @@
+
+./afl-fuzz -i ./fuzzgoat/in/ -o ./fuzzgoat/out -n -- ./fuzzgoat/fuzzgoat @@
 ```
 
 ## 问题1：echo core >/proc/sys/kernel/core_pattern出现
@@ -87,6 +87,8 @@ make clean
 USE_MMAP=1 make
 
 # 或者使用 TEST_MMAP
+TEST_MMAP=1 make
+
 AFL_NO_X86=1 TEST_MMAP=1 CC=/home/test/tcl/AFLpp-Android-Greybox/fuzzers/aflpp/android-ndk-r25c/toolchains/llvm/prebuilt/linux-x86_64/bin/armv7a-linux-androideabi26-clang make
 ```
 
